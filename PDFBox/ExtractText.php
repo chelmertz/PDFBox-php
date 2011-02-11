@@ -5,8 +5,9 @@ namespace PDFBox;
 use InvalidArgumentException;
 
 /**
- * @author Carl Helmertz
- **/
+ * @author Carl Helmertz <helmertz@gmail.com>
+ * @link http://pdfbox.apache.org/commandlineutilities/ExtractText.html
+ */
 class ExtractText {
 
 	/**
@@ -72,6 +73,9 @@ class ExtractText {
 	const OUTPUT_CONSOLE = true;
 	const OUTPUT_FILE = false;
 
+	/**
+	 * @param PDFBox $pdf_box
+	 */
 	public function __construct(PDFBox $pdf_box) {
 		$this->pdf_box = $pdf_box;
 	}

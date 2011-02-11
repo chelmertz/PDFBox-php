@@ -2,6 +2,10 @@
 
 use InvalidArgumentException;
 
+/**
+ * @author Carl Helmertz <carl.helmertz@gmail.com>
+ * @link http://pdfbox.apache.org
+ */
 class PDFBox {
 
 	/**
