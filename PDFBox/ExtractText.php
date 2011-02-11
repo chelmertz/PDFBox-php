@@ -114,12 +114,12 @@ class ExtractText {
 
 		$options = array();
 
-		if(self::OUTPUT_CONSOLE = $this->output_method) {
+		if(self::OUTPUT_CONSOLE == $this->output_method) {
 			$options[] = '-console';
 			$output_file = null;
 		}
 
-		if(self::FORMAT_HTML = $this->output_format) {
+		if(self::FORMAT_HTML == $this->output_format) {
 			$options[] = '-html';
 		}
 
