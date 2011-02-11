@@ -1,5 +1,7 @@
 <?php
 
+namespace PDFBox;
+
 use \InvalidArgumentException;
 
 /**
