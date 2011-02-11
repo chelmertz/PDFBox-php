@@ -1,6 +1,32 @@
 #PDFBox-php
 Parsing text from PDF-files using the java utility [PDFBox](http://pdfbox.apache.org/) Apache.
 
+##Usage
+
+###Basic
+This is a basic use case, found in `demos/demo.php`.
+
+Input:
+  - Path to jar
+  - Path to pdf
+
+Output:
+  - The contents in "regular.pdf" located in "regular.txt" in the same folder
+
+	<?php
+
+	require_once '..'.DIRECTORY_SEPARATOR.'PDFBox.php';
+	require_once '..'.DIRECTORY_SEPARATOR.'PDFBox'.DIRECTORY_SEPARATOR.'ExtractText.php';
+
+	$jar = "pdfbox-app-1.4.0.jar";
+	$pdf_box = new PDFBox($jar);
+	$extract_text = new PDFBox\ExtractText($pdf_box);
+
+	$extract_text->parse('regular.pdf');
+
+###Full API
+Read through the interface (public methods) of `ExtractText`. There are corresponding methods for every option available in the .jar.
+
 ##Requirements
  - java
  - [PDFBox](http://pdfbox.apache.org/) - one single .jar file necessary - and it must be executable
