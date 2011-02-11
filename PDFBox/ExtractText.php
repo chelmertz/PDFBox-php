@@ -153,7 +153,7 @@ class ExtractText {
 			$cli_options = implode(' ', $options);
 		}
 
-		exec("java -jar $this->pdf_box $cli_options $output_file", $output, $exit_code);
+		exec("java -jar $this->pdf_box ExtractText $cli_options $output_file", $output, $exit_code);
 		return $exit_code;
 	}
 
