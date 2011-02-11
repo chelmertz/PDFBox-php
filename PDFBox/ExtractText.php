@@ -110,7 +110,14 @@ class ExtractText {
 	 * @throws InvalidArgumentException
 	 * @return int
 	 */
-	public function parse($file) {
+	public function parse($pdf_file) {
+		if(!is_file($pdf_file)) {
+			$pdf_file = (string) $pdf_file;
+			throw new InvalidArgumentException("'$pdf_file' is not a file");
+		}
+		if(!is_readable($pdf_file)) {
+			throw new InvalidArgumentException("'$pdf_file' is not a readable file. Change its permissions");
+		}
 		$output_file = $this->output_file;
 
 		$options = array();
@@ -140,7 +147,7 @@ class ExtractText {
 			$options[] = '-ignoreBeads';
 		}
 
-		if($this->start_page) {
+		if($this->start_page && 1 != $this->start_page) {
 			$options[] = "-startPage $this->start_page";
 		}
 
@@ -153,7 +160,9 @@ class ExtractText {
 			$cli_options = implode(' ', $options);
 		}
 
-		exec("java -jar $this->pdf_box ExtractText $cli_options $output_file", $output, $exit_code);
+		$command = "java -jar $this->pdf_box ExtractText $cli_options $pdf_file $output_file";
+
+		exec($command, $output, $exit_code);
 		return $exit_code;
 	}
 
