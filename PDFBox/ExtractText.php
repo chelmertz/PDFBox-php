@@ -190,6 +190,7 @@ class ExtractText {
 
 	/**
 	 * @param boolean $format
+	 * @throws InvalidArgumentException
 	 * @return ExtractText
 	 */
 	public function setOuputFormat($format = self::RAW_TEXT) {
@@ -207,6 +208,7 @@ class ExtractText {
 
 	/**
 	 * @param ExtractText::OUPUT_FILE|ExtractText::OUTPUT_CONSOLE $output_medium
+	 * @throws InvalidArgumentException
 	 * @return ExtractText
 	 */
 	public function setOutputMedium($output_medium = self::OUTPUT_FILE) {
@@ -242,11 +244,12 @@ class ExtractText {
 
 	/**
 	 * @param int $start_page
+	 * @throws InvalidArgumentException
 	 * @return ExtractText
 	 */
-	public function setStartPage($starting_page = 1) {
+	public function setStartPage($start_page = 1) {
 		if(!is_numeric($start_page) || $start_page < 1) {
-			$start_page = 1;
+			throw new InvalidArgumentException("Start page must be a positive integer, '".gettype($start_page)."' given");
 		}
 		$this->start_page = $start_page;
 		return $this;
