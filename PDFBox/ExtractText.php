@@ -2,7 +2,8 @@
 
 namespace PDFBox;
 
-use \InvalidArgumentException;
+use \InvalidArgumentException,
+PDFBox;
 
 /**
  * @author Carl Helmertz <helmertz@gmail.com>
