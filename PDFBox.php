@@ -1,6 +1,6 @@
 <?php
 
-use InvalidArgumentException;
+use \InvalidArgumentException;
 
 /**
  * @author Carl Helmertz <carl.helmertz@gmail.com>

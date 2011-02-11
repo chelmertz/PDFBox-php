@@ -2,7 +2,7 @@
 
 namespace PDFBox;
 
-use InvalidArgumentException;
+use \InvalidArgumentException;
 
 /**
  * @author Carl Helmertz <helmertz@gmail.com>
@@ -161,7 +161,7 @@ class ExtractText {
 	 * @return ExtractText
 	 */
 	public function separateOutputByBeads($separate_output_by_beads = false) {
-		$this->separate_output_by_beads = (boolean) ;
+		$this->separate_output_by_beads = (boolean) $separate_output_by_beads;
 		return $this;
 	}
 
