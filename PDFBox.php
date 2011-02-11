@@ -38,7 +38,7 @@ class PDFBox {
 			throw new InvalidArgumentException("The path '$path' is not a file");
 		}
 		if(!is_executable($path)) {
-			throw new InvalidArgumentException("The path '$path' is not executable, check its permissions");
+			throw new InvalidArgumentException("The path '$path' is not executable, check its permissions. You could set it to something like 0755");
 		}
 	}
 
