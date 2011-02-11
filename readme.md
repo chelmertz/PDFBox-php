@@ -6,13 +6,6 @@ Parsing text from PDF-files using the java utility [PDFBox](http://pdfbox.apache
 ###Basic
 This is a basic use case, found in `demos/demo.php`.
 
-Input:
-  - Path to jar
-  - Path to pdf
-
-Output:
-  - The contents in "regular.pdf" located in "regular.txt" in the same folder
-
 	<?php
 
 	require_once '..'.DIRECTORY_SEPARATOR.'PDFBox.php';
@@ -23,6 +16,15 @@ Output:
 	$extract_text = new PDFBox\ExtractText($pdf_box);
 
 	$extract_text->parse('regular.pdf');
+
+Input:
+
+  - Path to jar
+  - Path to pdf
+
+Output:
+
+  - The contents in "regular.pdf" located in "regular.txt" in the same folder
 
 ###Full API
 Read through the interface (public methods) of `ExtractText`. There are corresponding methods for every option available in the .jar.
