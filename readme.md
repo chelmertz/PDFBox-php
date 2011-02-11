@@ -24,10 +24,10 @@ Input:
 
 Output:
 
-  - The contents in "regular.pdf" located in "regular.txt" in the same folder
+  - The contents of "regular.pdf" located in "regular.txt" in the same folder
 
 ###Full API
-Read through the interface (public methods) of `ExtractText`. There are corresponding methods for every option available in the .jar.
+Read through the interface (public methods) of `PDFBox\ExtractText`. There are corresponding methods for every option available in the .jar.
 
 ##Requirements
  - java
