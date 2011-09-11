@@ -11,7 +11,7 @@ use \InvalidArgumentException;
 class ExtractText {
 
 	/**
-	 * @var intn
+	 * @var int
 	 */
 	protected $end_page = null;
 
@@ -159,7 +159,7 @@ class ExtractText {
 			$cli_options = implode(' ', $options);
 		}
 
-		$command = "java -jar $this->pdf_box ExtractText $cli_options $pdf_file $output_file";
+		$command = escapeshellcmd("java -jar $this->pdf_box ExtractText $cli_options $pdf_file $output_file");
 
 		exec($command, $output, $exit_code);
 		return $exit_code;
